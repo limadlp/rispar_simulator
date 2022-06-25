@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rispar_simulator_provider/app/core/navigator/app_navigator.dart';
+import 'package:rispar_simulator_provider/app/modules/splash/splash_page.dart';
 
 import 'modules/home/home_module.dart';
 
@@ -21,6 +22,7 @@ class AppWidget extends StatelessWidget {
             routes: {
               ...HomeModule().routers,
             },
+
             //theme: ,
           );
         });

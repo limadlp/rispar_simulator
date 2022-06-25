@@ -10,7 +10,7 @@ class HomeModule extends AppProviderModule {
             Provider(create: (context) => HomeController()),
           ],
           routers: {
-            '/home': (context) => HomePage(
+            '/': (context) => HomePage(
                   homeController: context.read(),
                 ),
           },
