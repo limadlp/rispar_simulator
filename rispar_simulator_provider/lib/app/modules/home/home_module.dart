@@ -7,7 +7,7 @@ class HomeModule extends AppProviderModule {
   HomeModule()
       : super(
           bindings: [
-            Provider(create: (context) => HomeController()),
+            ChangeNotifierProvider(create: (context) => HomeController()),
           ],
           routers: {
             '/': (context) => HomePage(

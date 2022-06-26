@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rispar_simulator_provider/app/core/navigator/app_navigator.dart';
-import 'package:rispar_simulator_provider/app/modules/splash/splash_page.dart';
+import 'package:rispar_simulator_provider/app/core/ui/app_config_ui.dart';
+import 'package:rispar_simulator_provider/app/modules/amount/amount_module.dart';
 
 import 'modules/home/home_module.dart';
 
@@ -18,9 +19,11 @@ class AppWidget extends StatelessWidget {
           return MaterialApp(
             title: 'Simulador de Crédito',
             debugShowCheckedModeBanner: false,
+            theme: AppConfigUI.theme,
             navigatorKey: AppNavigator.navigatorKey,
             routes: {
               ...HomeModule().routers,
+              ...AmountModule().routers,
             },
 
             //theme: ,
