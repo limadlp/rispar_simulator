@@ -7,9 +7,9 @@
    - [📖 Sobre](#-sobre)
    - [📱 Design e Preview](#-design-e-preview)
    - [📦 Framework e Packages Utilizados](#-framework-e-packages-utilizados)
-   - [🛠 Arquitetura e Estrutura de Pastas](#-arquitetura-e-estrutura-de-pastas)
+   - [🛠 Arquitetura e Estrutura de Pastas](#arquitetura-e-estrutura-de-pastas)
    - [🤔 Como executar](#-como-executar)
-   - [📝 Testes de uso](#-testes-de-uso)
+   - [📝 Testes de uso](#testes-de-uso)
 
 ---
 #### 📖 Sobre 
@@ -72,7 +72,9 @@ Exemplo em dispositivos diferentes
  
 ---
 
-#### 🛠️ Arquitetura e Estrutura de Pastas
+#### Arquitetura e Estrutura de Pastas
+
+#####
 
 - Para este projeto, optou-se pelo padrão MVVM. 
 - O MVVM que possibilita que o projeto escale e facilita sua manutenção, mas não é tão complexo como uma implementação de Clean Architecture, Hexagonal, ou Clean Dart. Apesar de arquituras mais elaboradas poderem ser mais robustas, devemos pensar também no tempo e o custo de desenvolvimento do projeto, que neste aplicação ainda está ainda na fase de MVP. 
@@ -157,7 +159,7 @@ Camada de dados. responsável por buscar os dados no backend.
 
 ---
 
-#### Testes de uso 
+#### Testes de Uso 
 
 
 - Após a implementação, testes foram feitos para garantir o funcionamento da aplicação. 
