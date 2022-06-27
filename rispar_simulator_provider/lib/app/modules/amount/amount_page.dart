@@ -82,7 +82,7 @@ class _AmountPageState extends State<AmountPage> {
                       style: kTextStyleA.copyWith(fontSize: 25.sp),
                     ),
                     Text(
-                      "R\$1000 ",
+                      "R\$1.000 ",
                       style: kTextStyleABold.copyWith(fontSize: 26.sp),
                     ),
                     Text(
