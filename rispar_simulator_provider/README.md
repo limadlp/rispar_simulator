@@ -147,10 +147,10 @@ Camada de dados. responsável por buscar os dados no backend.
    https://flutter.dev/docs/get-started/install
 
    - Clone o repositório:
-   $ git clone https://github.com/felipecastrosales/app_filmes app_filmes
+   $ git clone https://github.com/rispar_simulator_provider
 
    - Entre no diretório:
-   $ cd app_filmes
+   $ cd rispar_simulator_provider
 
    - Instale as dependências:
    $ flutter pub get
