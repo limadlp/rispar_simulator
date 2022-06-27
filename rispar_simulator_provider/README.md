@@ -15,11 +15,11 @@
 #### 📖 Sobre 
 
 ##### Demanda
-   - Implementar as telas do Simulador de Crédito da Rispar seguindo os detalhes visuais enviados e mantendo os valores de simulação entre           1.000 e 300.000 Reais.
+   - Implementar as telas do Simulador de Crédito da Rispar seguindo os detalhes visuais enviados e mantendo os valores de simulação entre           1.000 e 300.000 reais.
  
 ##### Fluxo
 
-- A funcionalidade mais utilizada da plataforma, é a simulação de crédito.
+- A funcionalidade mais utilizada da plataforma é a simulação de crédito.
 - Através dela, o usuário consegue descobrir a sua taxa de empréstimo, bem como a garantia necessária para efetivar aquela operação.
 - A operação funciona assim:
     1. Usuário informa o nome e e-mail;
