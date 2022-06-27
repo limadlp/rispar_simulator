@@ -1,35 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text2/flutter_masked_text2.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:rispar_simulator_provider/app/core/ui/text_styles.dart';
 import 'package:rispar_simulator_provider/app/core/ui/widgets/custom_app_bar.dart';
+import 'package:rispar_simulator_provider/app/core/ui/widgets/custom_leading_app_bar.dart';
 import 'package:rispar_simulator_provider/app/models/data_input_model.dart';
 import '../../core/navigator/app_navigator.dart';
 import 'amount_controller.dart';
 
-class AmountPage extends StatelessWidget {
+class AmountPage extends StatefulWidget {
   final AmountController _amountController;
 
-  AmountPage({Key? key, required AmountController amountController})
+  const AmountPage({Key? key, required AmountController amountController})
       : _amountController = amountController,
         super(key: key);
 
+  @override
+  State<AmountPage> createState() => _AmountPageState();
+}
+
+class _AmountPageState extends State<AmountPage> {
   final _formKey = GlobalKey<FormState>();
+  final valueController = MoneyMaskedTextController(
+    thousandSeparator: '.',
+    decimalSeparator: '',
+    leftSymbol: "R\$ ",
+    precision: 0,
+    initialValue: 1000,
+  );
+  @override
+  void dispose() {
+    super.dispose();
+    valueController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    _amountController.dataInputModel =
+    widget._amountController.dataInputModel =
         (ModalRoute.of(context)?.settings.arguments) as DataInputModel;
 
     return Scaffold(
       appBar: AppBar(
+        leading: const CustomLeadingAppBar(),
         title: const CustomAppBarTitle(value: 0.33),
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 40,
-          vertical: 20,
-        ),
+        padding: const EdgeInsets.fromLTRB(30, 20, 30, 20
+
+            //vertical: 20,
+            ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -39,7 +60,9 @@ class AmountPage extends StatelessWidget {
                   children: [
                     Text(
                       'De quanto ',
-                      style: kHeaderTextStyleB,
+                      style: kHeaderTextStyleB.copyWith(
+                        color: const Color(0xff0f7676),
+                      ),
                     ),
                     Text(
                       'você precisa?',
@@ -47,10 +70,19 @@ class AmountPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 4,
+                ),
                 Row(
-                  children: const [
-                    Text('Insira um valor entre '),
-                    Text("R\$1000 a R\$300.000"),
+                  children: [
+                    Text(
+                      'Insira um valor entre ',
+                      style: kTextStyleA.copyWith(fontSize: 25.sp),
+                    ),
+                    Text(
+                      "R\$1000 a R\$300.000",
+                      style: kTextStyleABold.copyWith(fontSize: 25.sp),
+                    ),
                   ],
                 ),
               ],
@@ -58,11 +90,15 @@ class AmountPage extends StatelessWidget {
             Form(
               key: _formKey,
               child: TextFormField(
-                initialValue: "1000",
+                controller: valueController,
+                style: kMoneyTextStyle,
+
+                //initialValue:,
                 decoration: const InputDecoration(hintText: "R\$ 1000"),
                 validator: (value) {
+                  value = value!.replaceAll(RegExp(r'[^0-9]'), '');
                   //TODO: Name validator another file
-                  if (value!.isEmpty) {
+                  if (value.isEmpty) {
                     return 'Insira um valor';
                   }
                   //TODO: Implement value verification
@@ -73,11 +109,14 @@ class AmountPage extends StatelessWidget {
                   return null;
                 },
                 keyboardType: TextInputType.number,
-                onSaved: (value) => _amountController.dataInputModel!.amount =
-                    double.parse(value!),
+                onSaved: (value) {
+                  value = value!.replaceAll(RegExp(r'[^0-9]'), '');
+                  widget._amountController.dataInputModel!.amount =
+                      double.parse(value);
+                },
                 onChanged: (value) {
-                  _amountController.isValueFilled = value.isNotEmpty;
-                  _amountController.changeButtonActive();
+                  widget._amountController.isValueFilled = value.isNotEmpty;
+                  widget._amountController.changeButtonActive();
                 },
               ),
             ),
@@ -85,7 +124,9 @@ class AmountPage extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: Consumer<AmountController>(builder: (_, controller, __) {
-                return ElevatedButton(
+                return MaterialButton(
+                  disabledColor: const Color(0xff7fc0c1),
+                  color: const Color(0xff3f9798),
                   onPressed: controller.isButtonActive
                       ? () {
                           if (_formKey.currentState?.validate() ?? false) {
@@ -97,7 +138,10 @@ class AmountPage extends StatelessWidget {
                           }
                         }
                       : null,
-                  child: const Text('Continuar'),
+                  child: Text(
+                    'Continuar',
+                    style: kButtonTextStyle,
+                  ),
                 );
               }),
             ),

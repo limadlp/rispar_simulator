@@ -26,9 +26,13 @@ class HomeEmailForm extends StatelessWidget {
           ],
         ),
         TextFormField(
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             hintText: 'seuemail@email.com',
+            hintStyle: kHintStyle,
           ),
+          initialValue: controller.dataInputModel.email == ''
+              ? null
+              : controller.dataInputModel.email,
           validator: Validatorless.multiple([
             Validatorless.email('email inválido'),
             Validatorless.required("Campo obrigatório"),
@@ -39,6 +43,9 @@ class HomeEmailForm extends StatelessWidget {
             controller.changeButtonActive();
           },
           keyboardType: TextInputType.emailAddress,
+        ),
+        const SizedBox(
+          height: 20,
         ),
       ],
     );

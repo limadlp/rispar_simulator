@@ -16,7 +16,7 @@ class DataOutputModel {
   double collateralUnitPrice;
   String firstDueDate;
   //DateTime lastDueDate;
-  //double interestRate;
+  double interestRate;
   double monthlyRate;
   double annualRate;
 
@@ -36,6 +36,7 @@ class DataOutputModel {
     required this.firstDueDate,
     required this.monthlyRate,
     required this.annualRate,
+    required this.interestRate,
   });
 
   Map<String, dynamic> toMap() {
@@ -45,14 +46,15 @@ class DataOutputModel {
       'email': email,
       'ltv': ltv,
       'contract_value': contractValue,
-      'net_value': netValue,
+      'netValue': netValue,
       'installment_value': installmentValue,
-      'iof_fee': iofFee,
+      'iofFee': iofFee,
       'origination_fee': originationFee,
       'term': term,
       'collateral': collateral,
       'collateral_unit_price': collateralUnitPrice,
       'first_due_date': firstDueDate,
+      'interest_rate': interestRate,
       'monthly_rate': monthlyRate,
       'annual_rate': annualRate,
     };
@@ -60,10 +62,10 @@ class DataOutputModel {
 
   factory DataOutputModel.fromMap(Map<String, dynamic> map) {
     return DataOutputModel(
-      id: map['id'] ?? '',
+      id: map['id'],
       fullname: map['fullname'] ?? '',
       email: map['email'] ?? '',
-      ltv: map['ltv']?.toInt() ?? 0.0,
+      ltv: map['ltv']?.toInt() ?? 0,
       contractValue: map['contract_value']?.toDouble() ?? 0.0,
       netValue: map['net_value']?.toDouble() ?? 0.0,
       installmentValue: map['installment_value']?.toDouble() ?? 0.0,
@@ -73,6 +75,7 @@ class DataOutputModel {
       collateral: map['collateral']?.toDouble() ?? 0.0,
       collateralUnitPrice: map['collateral_unit_price']?.toDouble() ?? 0.0,
       firstDueDate: map['first_due_date'] ?? '',
+      interestRate: map['interest_rate']?.toDouble() ?? 0.0,
       monthlyRate: map['monthly_rate']?.toDouble() ?? 0.0,
       annualRate: map['annual_rate']?.toDouble() ?? 0.0,
     );

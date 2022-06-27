@@ -1,3 +1,4 @@
+import 'package:asuka/asuka.dart' as asuka;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rispar_simulator_provider/app/core/navigator/app_navigator.dart';
@@ -20,6 +21,10 @@ class AppWidget extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
+            builder: asuka.builder,
+            navigatorObservers: [
+              asuka.asukaHeroController,
+            ],
             title: 'Simulador de Crédito',
             debugShowCheckedModeBanner: false,
             theme: AppConfigUI.theme,

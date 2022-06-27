@@ -8,7 +8,7 @@ class WaitModule extends AppProviderModule {
   WaitModule()
       : super(
           bindings: [
-            ChangeNotifierProvider(create: (context) => WaitController()),
+            Provider(create: (context) => WaitController()),
           ],
           routers: {
             '/wait': (context) => const WaitPage(),

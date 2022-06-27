@@ -24,11 +24,9 @@ class HomeHeader extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        const Text(
+        Text(
           'Crédito rápido, fácil e seguro! :)',
-          style: TextStyle(
-            fontSize: 20,
-          ),
+          style: kTextStyleA,
         ),
         // const SizedBox(
         //   height: 40,

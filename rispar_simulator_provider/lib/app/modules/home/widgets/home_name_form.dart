@@ -24,7 +24,13 @@ class HomeNameForm extends StatelessWidget {
           ],
         ),
         TextFormField(
-          decoration: const InputDecoration(hintText: 'Nome Completo'),
+          decoration: InputDecoration(
+            hintText: 'Nome Completo',
+            hintStyle: kHintStyle,
+          ),
+          initialValue: controller.dataInputModel.fullname == ''
+              ? null
+              : controller.dataInputModel.fullname,
           validator: (name) {
             //TODO: Name validator another file
             if (name!.isEmpty) {
@@ -41,7 +47,7 @@ class HomeNameForm extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 20,
+          height: 30,
         ),
       ],
     );

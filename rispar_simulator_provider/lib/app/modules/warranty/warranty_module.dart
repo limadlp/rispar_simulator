@@ -8,7 +8,11 @@ class WarrantyModule extends AppProviderModule {
   WarrantyModule()
       : super(
           bindings: [
-            ChangeNotifierProvider(create: (context) => WarrantyController()),
+            ChangeNotifierProvider(
+              create: (context) => WarrantyController(
+                simulationService: context.read(),
+              ),
+            ),
           ],
           routers: {
             '/warranty': (context) => const WarrantyPage(),

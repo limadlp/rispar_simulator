@@ -18,26 +18,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final availableHeight = MediaQuery.of(context).size.height -
-        AppBar().preferredSize.height -
-        MediaQuery.of(context).padding.top -
-        MediaQuery.of(context).padding.bottom;
+    final availableHeight = MediaQuery.of(context).size.height;
+    //- AppBar().preferredSize.height -
+    //   MediaQuery.of(context).padding.top -
+    //  MediaQuery.of(context).padding.bottom;
 
     return Scaffold(
-      body: SafeArea(
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: SizedBox(
-              height: availableHeight,
-              child: Column(
-                children: [
-                  const HomeImageHeader(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 20,
-                      horizontal: 40,
-                    ),
+      body: Form(
+        key: _formKey,
+        child: SingleChildScrollView(
+          child: SizedBox(
+            height: availableHeight,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const HomeImageHeader(),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(40, 40, 30, 20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -52,8 +50,8 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

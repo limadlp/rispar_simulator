@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rispar_simulator_provider/app/core/ui/const_colors.dart';
+import 'package:rispar_simulator_provider/app/core/ui/widgets/custom_leading_app_bar.dart';
 import 'package:rispar_simulator_provider/app/core/utilities/money.dart';
 import 'package:rispar_simulator_provider/app/modules/warranty/warranty_controller.dart';
 import 'package:rispar_simulator_provider/app/modules/warranty/widgets/installments_slider.dart';
@@ -21,13 +24,11 @@ class WarrantyPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: const CustomLeadingAppBar(),
         title: const CustomAppBarTitle(value: 0.66),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 40,
-          vertical: 20,
-        ),
+        padding: const EdgeInsets.fromLTRB(30, 20, 30, 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +36,13 @@ class WarrantyPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Valor escolhido'),
+                Text(
+                  'Valor escolhido',
+                  style: kHeaderTextStyleA,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Text(
                   Money.moneyFormat(controller.dataInputModel?.amount ?? 0),
                   style: kMoneyTextStyle,
@@ -45,9 +52,9 @@ class WarrantyPage extends StatelessWidget {
             Column(
               children: [
                 Row(
-                  children: const [
-                    Text('Escolha a '),
-                    Text('quantidade de parcelas'),
+                  children: [
+                    Text('Escolha a ', style: kChooseTextStyle),
+                    Text('quantidade de parcelas', style: kChooseTextStyleBold),
                   ],
                 ),
                 const SizedBox(
@@ -58,9 +65,15 @@ class WarrantyPage extends StatelessWidget {
                   height: 40,
                 ),
                 Row(
-                  children: const [
-                    Text('Escolha o '),
-                    Text('percentual de garantia'),
+                  children: [
+                    Text(
+                      'Escolha o ',
+                      style: kChooseTextStyle,
+                    ),
+                    Text(
+                      'percentual de garantia',
+                      style: kChooseTextStyleBold,
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -71,13 +84,18 @@ class WarrantyPage extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text('Garantia Protegida'),
-                SizedBox(
+              children: [
+                Text(
+                  'Garantia Protegida',
+                  style: kHeaderTextStyleB.copyWith(
+                      color: const Color(0xff0f7676)),
+                ),
+                const SizedBox(
                   height: 20,
                 ),
                 Text(
                   'Bitcoin caiu? Fique tranquilo! Na garantia protegida, você não recebe chamada de margem e não é liquidado.',
+                  style: kWarrantyTextStyle,
                 ),
               ],
             ),
@@ -86,22 +104,28 @@ class WarrantyPage extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     controller.dataInputModel?.hasProtectedCollateral = false;
-                    AppNavigator.to.pushNamed(
-                      '/warranty',
-                      arguments: controller.dataInputModel,
-                    );
+                    controller.getSimulationData();
                   },
-                  child: const Text('Continuar sem garantia'),
+                  child: Text(
+                    'Continuar sem garantia',
+                    style: kButtonTextStyle.copyWith(color: kMainIconColor),
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    controller.dataInputModel?.hasProtectedCollateral = true;
-                    AppNavigator.to.pushNamed(
-                      '/warranty',
-                      arguments: controller.dataInputModel,
-                    );
-                  },
-                  child: const Text('Adicionar garantia'),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      controller.dataInputModel?.hasProtectedCollateral = true;
+                      controller.getSimulationData();
+                    },
+                    child: Text(
+                      'Adicionar garantia',
+                      style: kButtonTextStyle,
+                    ),
+                  ),
                 ),
               ],
             )

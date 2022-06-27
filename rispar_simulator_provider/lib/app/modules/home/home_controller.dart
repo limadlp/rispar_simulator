@@ -20,8 +20,8 @@ class HomeController extends ChangeNotifier {
   void setEmail() {}
 
   DataInputModel dataInputModel = DataInputModel(
-    fullname: 'nome',
-    email: 'email',
+    fullname: '',
+    email: '',
     ltv: 20,
     amount: 5000,
     term: 12,

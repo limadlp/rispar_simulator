@@ -10,7 +10,7 @@ class CustomAppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 40, 40, 40),
+        padding: const EdgeInsets.fromLTRB(10, 0, 60, 0),
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.5,
           child: LinearProgressIndicator(

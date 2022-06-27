@@ -29,6 +29,7 @@ void main() {
     firstDueDate: "2022-07-10",
     monthlyRate: 2.357816,
     annualRate: 32.267196,
+    interestRate: 1.69,
   );
 
   test('It should get a OutputDataModel', () async {
