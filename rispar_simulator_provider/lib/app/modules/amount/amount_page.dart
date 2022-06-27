@@ -47,7 +47,7 @@ class _AmountPageState extends State<AmountPage> {
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 20, 30, 20
+        padding: const EdgeInsets.fromLTRB(30, 20, 30, 40
 
             //vertical: 20,
             ),
@@ -97,12 +97,10 @@ class _AmountPageState extends State<AmountPage> {
                 decoration: const InputDecoration(hintText: "R\$ 1000"),
                 validator: (value) {
                   value = value!.replaceAll(RegExp(r'[^0-9]'), '');
-                  //TODO: Name validator another file
+
                   if (value.isEmpty) {
                     return 'Insira um valor';
-                  }
-                  //TODO: Implement value verification
-                  else if (int.parse(value) < 1000 ||
+                  } else if (int.parse(value) < 1000 ||
                       int.parse(value) > 300000) {
                     return "O valor deve estar entre R\$1.000 e R\$300.000";
                   }
@@ -120,30 +118,33 @@ class _AmountPageState extends State<AmountPage> {
                 },
               ),
             ),
-            SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: Consumer<AmountController>(builder: (_, controller, __) {
-                return MaterialButton(
-                  disabledColor: const Color(0xff7fc0c1),
-                  color: const Color(0xff3f9798),
-                  onPressed: controller.isButtonActive
-                      ? () {
-                          if (_formKey.currentState?.validate() ?? false) {
-                            _formKey.currentState!.save();
-                            AppNavigator.to.pushNamed(
-                              '/warranty',
-                              arguments: controller.dataInputModel,
-                            );
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: Consumer<AmountController>(builder: (_, controller, __) {
+                  return MaterialButton(
+                    disabledColor: const Color(0xff7fc0c1),
+                    color: const Color(0xff3f9798),
+                    onPressed: controller.isButtonActive
+                        ? () {
+                            if (_formKey.currentState?.validate() ?? false) {
+                              _formKey.currentState!.save();
+                              AppNavigator.to.pushNamed(
+                                '/warranty',
+                                arguments: controller.dataInputModel,
+                              );
+                            }
                           }
-                        }
-                      : null,
-                  child: Text(
-                    'Continuar',
-                    style: kButtonTextStyle,
-                  ),
-                );
-              }),
+                        : null,
+                    child: Text(
+                      'Continuar',
+                      style: kButtonTextStyle,
+                    ),
+                  );
+                }),
+              ),
             ),
           ],
         ),

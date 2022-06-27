@@ -45,8 +45,6 @@ class WarrantyController extends ChangeNotifier {
       '/wait',
       arguments: dataInputModel,
     );
-    //TODO: Tratar erros
-    await Future.delayed(const Duration(seconds: 2), () {});
 
     try {
       dataOutputModel =

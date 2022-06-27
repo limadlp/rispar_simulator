@@ -36,9 +36,15 @@ class ResultPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 40),
-                //TODO: Close
-                const Icon(
-                  Icons.close,
+                GestureDetector(
+                  onTap: () {
+                    AppNavigator.to.pop();
+                    AppNavigator.to.pop();
+                    AppNavigator.to.pop();
+                  },
+                  child: const Icon(
+                    Icons.close,
+                  ),
                 ),
               ],
             ),

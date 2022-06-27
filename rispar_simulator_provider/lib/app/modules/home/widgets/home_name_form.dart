@@ -32,7 +32,6 @@ class HomeNameForm extends StatelessWidget {
               ? null
               : controller.dataInputModel.fullname,
           validator: (name) {
-            //TODO: Name validator another file
             if (name!.isEmpty) {
               return 'Campo obrigatório';
             } else if (name.trim().split(' ').length <= 1) {
