@@ -43,7 +43,6 @@ dependencies:
   syncfusion_flutter_sliders: ^20.1.61
   syncfusion_flutter_core: ^20.1.61
   money_formatter: ^0.0.3
-  step_progress_indicator: ^1.0.2
   asuka: ^2.0.0+1
   flutter_masked_text2: ^0.9.1
   intl: ^0.17.0
