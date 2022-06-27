@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:rispar_simulator_provider/app/core/ui/const_colors.dart';
 
 class AppConfigUI {
   AppConfigUI._();
 
   static final ThemeData theme = ThemeData(
+    fontFamily: 'Inter',
     //textTheme: GoogleFonts.interTextTheme(),
-    //primarySwatch: _primarySwatch,
     primarySwatch: Colors.cyan,
     backgroundColor: Colors.white,
     scaffoldBackgroundColor: Colors.white,
@@ -31,12 +32,14 @@ class AppConfigUI {
       ),
     ),
     appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+      ),
       elevation: 0,
       //toolbarHeight: 100,
       backgroundColor: Colors.white,
       iconTheme: IconThemeData(color: Color(0xff3f9798)),
     ),
-
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size.fromHeight(40),

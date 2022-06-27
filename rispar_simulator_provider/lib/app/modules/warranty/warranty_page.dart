@@ -84,7 +84,7 @@ class WarrantyPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Garantia Protegida',
+                  'Garantia protegida',
                   style: kHeaderTextStyleB.copyWith(
                       color: const Color(0xff0f7676)),
                 ),

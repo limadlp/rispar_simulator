@@ -24,11 +24,11 @@ class ResultPage extends StatelessWidget {
         leading: const CustomLeadingAppBar(),
         title: Center(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
             child: Row(
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.45,
+                  width: MediaQuery.of(context).size.width * 0.5,
                   child: const LinearProgressIndicator(
                     backgroundColor: kMainGreyColor,
                     valueColor: AlwaysStoppedAnimation<Color>(kMainIconColor),
