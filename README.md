@@ -46,7 +46,6 @@ Exemplo em dispositivos diferentes
 ![fonte](screenshots/rispar-devices.png)
 
 
-
 ---
 
 
