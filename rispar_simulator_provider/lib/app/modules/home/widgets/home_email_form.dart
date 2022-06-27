@@ -26,6 +26,7 @@ class HomeEmailForm extends StatelessWidget {
           ],
         ),
         TextFormField(
+          style: kTextStyleA,
           decoration: InputDecoration(
             hintText: 'seuemail@email.com',
             hintStyle: kHintStyle,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:rispar_simulator_provider/app/modules/home/home_controller.dart';
 
 import 'widgets/home_button.dart';
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     final availableHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(

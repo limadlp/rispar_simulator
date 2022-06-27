@@ -24,6 +24,7 @@ class HomeNameForm extends StatelessWidget {
           ],
         ),
         TextFormField(
+          style: kTextStyleA,
           decoration: InputDecoration(
             hintText: 'Nome Completo',
             hintStyle: kHintStyle,

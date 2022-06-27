@@ -11,7 +11,6 @@ class SimulationRepositoryImpl implements SimulationRepository {
   @override
   Future<DataOutputModel> getSimulationData(
       DataInputModel dataInputModel) async {
-    //final response = await http.get(Uri.parse(baseUrl));
     final response = await http.post(
       Uri.parse(baseUrl),
       headers: <String, String>{

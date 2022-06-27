@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:rispar_simulator_provider/app/core/ui/text_styles.dart';
@@ -29,6 +30,7 @@ class _AmountPageState extends State<AmountPage> {
     precision: 0,
     initialValue: 1000,
   );
+
   @override
   void dispose() {
     super.dispose();

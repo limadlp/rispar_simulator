@@ -34,7 +34,7 @@ final kButtonTextStyle = TextStyle(
 
 final kTextStyleABold = TextStyle(
   fontFamily: 'Inter',
-  //color: Color(0xFF6A6C6E),
+  color: const Color(0xFF47484C),
   fontWeight: FontWeight.w800,
   fontSize: 30.0.sp,
 );
