@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:rispar_simulator_provider/app/core/ui/const_colors.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
@@ -39,7 +38,7 @@ class WarrantySlider extends StatelessWidget {
 
                 inactiveDividerRadius: 7,
                 inactiveTrackHeight: 5,
-                labelOffset: Offset(0, 20),
+                labelOffset: const Offset(0, 20),
               ),
               child: SfSlider(
                 min: 20,

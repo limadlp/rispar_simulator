@@ -13,11 +13,11 @@ final kHeaderTextStyleB = TextStyle(
 );
 final kTextStyleA = TextStyle(
   fontSize: 30.0.sp,
-  color: Color(0xFF47484c),
+  color: const Color(0xFF47484c),
 );
 final kHintStyle = TextStyle(
   fontSize: 32.0.sp,
-  color: Color(0xFF8f8f91),
+  color: const Color(0xFF8f8f91),
 );
 final kButtonTextStyle = TextStyle(
   fontSize: 32.0.sp,

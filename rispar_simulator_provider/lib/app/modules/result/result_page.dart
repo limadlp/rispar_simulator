@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rispar_simulator_provider/app/core/ui/text_styles.dart';
-import 'package:rispar_simulator_provider/app/core/ui/widgets/custom_app_bar.dart';
 import 'package:rispar_simulator_provider/app/core/ui/widgets/custom_leading_app_bar.dart';
 import 'package:rispar_simulator_provider/app/modules/result/result_controller.dart';
 import 'package:rispar_simulator_provider/app/modules/result/widgets/result_row.dart';

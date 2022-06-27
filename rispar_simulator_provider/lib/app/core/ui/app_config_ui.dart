@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rispar_simulator_provider/app/core/ui/const_colors.dart';
 
 class AppConfigUI {

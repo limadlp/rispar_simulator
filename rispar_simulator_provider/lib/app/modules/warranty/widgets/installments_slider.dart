@@ -38,7 +38,7 @@ class InstallmentsSlider extends StatelessWidget {
 
                 inactiveDividerRadius: 7,
                 inactiveTrackHeight: 5,
-                labelOffset: Offset(0, 20),
+                labelOffset: const Offset(0, 20),
               ),
               child: SfSlider(
                 min: 3,

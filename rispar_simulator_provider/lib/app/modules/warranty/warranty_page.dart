@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rispar_simulator_provider/app/core/ui/const_colors.dart';
@@ -8,7 +7,6 @@ import 'package:rispar_simulator_provider/app/modules/warranty/warranty_controll
 import 'package:rispar_simulator_provider/app/modules/warranty/widgets/installments_slider.dart';
 import 'package:rispar_simulator_provider/app/modules/warranty/widgets/warranty_slider.dart';
 
-import '../../core/navigator/app_navigator.dart';
 import '../../core/ui/text_styles.dart';
 import '../../core/ui/widgets/custom_app_bar.dart';
 import '../../models/data_input_model.dart';

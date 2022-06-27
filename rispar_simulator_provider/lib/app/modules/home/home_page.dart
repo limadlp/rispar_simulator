@@ -8,20 +8,14 @@ import 'widgets/home_image_header.dart';
 import 'widgets/home_name_form.dart';
 
 class HomePage extends StatelessWidget {
-  final HomeController _homeController;
-
   HomePage({Key? key, required HomeController homeController})
-      : _homeController = homeController,
-        super(key: key);
+      : super(key: key);
 
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     final availableHeight = MediaQuery.of(context).size.height;
-    //- AppBar().preferredSize.height -
-    //   MediaQuery.of(context).padding.top -
-    //  MediaQuery.of(context).padding.bottom;
 
     return Scaffold(
       body: Form(
