@@ -31,16 +31,18 @@
 
 #### 📱 Design e Preview
 
-Referencia visual enviada
+A partir da referência recebida foi feito um estudo de cores e de fontes.
+
 ![cores](screenshots/rispar-cores.png)
 ![fonte](screenshots/rispar-fonte.png)
+ 
+Abaixo o Preview do App funcionando em comparação com a referência
 
-A partir da referência foi feito um estudo de cores e de fontes. 
+![preview](screenshots/rispar-preview.png)
 
-Preview comparativo
-...
 
 Exemplo em dispositivos diferentes
+
 ![fonte](screenshots/rispar-devices.png)
 
 
