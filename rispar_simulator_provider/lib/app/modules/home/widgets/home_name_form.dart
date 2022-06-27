@@ -12,7 +12,7 @@ class HomeNameForm extends StatelessWidget {
     return Column(
       children: [
         Row(
-          children: const [
+          children: [
             Text(
               'Qual seu ',
               style: kTextStyleA,
@@ -41,7 +41,7 @@ class HomeNameForm extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
       ],
     );

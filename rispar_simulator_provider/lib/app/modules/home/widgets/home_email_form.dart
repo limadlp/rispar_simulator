@@ -14,7 +14,7 @@ class HomeEmailForm extends StatelessWidget {
     return Column(
       children: [
         Row(
-          children: const [
+          children: [
             Text(
               'E seu ',
               style: kTextStyleA,

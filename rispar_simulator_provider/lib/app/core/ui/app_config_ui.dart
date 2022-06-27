@@ -6,8 +6,10 @@ class AppConfigUI {
   AppConfigUI._();
 
   static final ThemeData theme = ThemeData(
-    textTheme: GoogleFonts.interTextTheme(),
+    //textTheme: GoogleFonts.interTextTheme(),
     //primarySwatch: _primarySwatch,
+    backgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.white,
     primaryColor: const Color(0xff439596),
     primaryColorLight: const Color(0xff209595),
     inputDecorationTheme: const InputDecorationTheme(

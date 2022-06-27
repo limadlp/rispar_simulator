@@ -39,6 +39,10 @@ dependencies:
   http: ^0.13.4
   validatorless: ^1.2.1
   google_fonts: ^3.0.1
+  device_preview: ^1.1.0
+  syncfusion_flutter_sliders: ^20.1.61
+  syncfusion_flutter_core: ^20.1.61
+  money_formatter: ^0.0.3
 
 
 dev_dependencies:

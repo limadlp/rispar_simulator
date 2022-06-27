@@ -9,12 +9,8 @@ class HomeHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset('assets/images/header.png'),
-        const SizedBox(
-          height: 20,
-        ),
         Row(
-          children: const [
+          children: [
             Text(
               'Simule ',
               style: kHeaderTextStyleA,
@@ -34,9 +30,9 @@ class HomeHeader extends StatelessWidget {
             fontSize: 20,
           ),
         ),
-        const SizedBox(
-          height: 40,
-        ),
+        // const SizedBox(
+        //   height: 40,
+        // ),
       ],
     );
   }

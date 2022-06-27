@@ -16,9 +16,9 @@ class HomeButton extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
-        const SizedBox(
-          height: 40,
-        ),
+        // const SizedBox(
+        //   height: 40,
+        // ),
         SizedBox(
           width: double.infinity,
           height: 50,

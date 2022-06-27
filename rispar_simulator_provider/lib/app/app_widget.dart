@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rispar_simulator_provider/app/core/navigator/app_navigator.dart';
 import 'package:rispar_simulator_provider/app/core/ui/app_config_ui.dart';
 import 'package:rispar_simulator_provider/app/modules/amount/amount_module.dart';
+import 'package:rispar_simulator_provider/app/modules/result/result_module.dart';
+import 'package:rispar_simulator_provider/app/modules/wait/wait_module.dart';
+import 'package:rispar_simulator_provider/app/modules/warranty/warranty_module.dart';
 
 import 'modules/home/home_module.dart';
 
@@ -12,7 +15,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(540, 1140),
+        designSize: const Size(540, 1200),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
@@ -24,6 +27,9 @@ class AppWidget extends StatelessWidget {
             routes: {
               ...HomeModule().routers,
               ...AmountModule().routers,
+              ...WarrantyModule().routers,
+              ...WaitModule().routers,
+              ...ResultModule().routers,
             },
 
             //theme: ,

@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-const kHeaderTextStyleA = TextStyle(
-  color: Color(0xFF242629),
-  fontWeight: FontWeight.bold,
-  fontSize: 30.0,
+final kHeaderTextStyleA = TextStyle(
+  color: const Color(0xFF242629),
+  fontWeight: FontWeight.w600,
+  fontSize: 38.sp,
 );
-const kHeaderTextStyleB = TextStyle(
-  color: Color(0xFF2B9C9C),
-  fontWeight: FontWeight.bold,
-  fontSize: 30.0,
+final kHeaderTextStyleB = TextStyle(
+  color: const Color(0xFF2B9C9C),
+  fontWeight: FontWeight.w600,
+  fontSize: 38.0.sp,
 );
-const kTextStyleA = TextStyle(
-  fontSize: 20.0,
+final kTextStyleA = TextStyle(
+  fontSize: 20.0.sp,
 );
-const kTextStyleABold = TextStyle(
+final kTextStyleABold = TextStyle(
   //color: Color(0xFF6A6C6E),
   fontWeight: FontWeight.bold,
-  fontSize: 20.0,
+  fontSize: 20.0.sp,
+);
+final kMoneyTextStyle = TextStyle(
+  fontSize: 40.sp,
+  fontWeight: FontWeight.bold,
+  color: const Color(0xFF0f7676),
 );
