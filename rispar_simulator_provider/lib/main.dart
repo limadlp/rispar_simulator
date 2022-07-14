@@ -9,6 +9,6 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(const AppModule());
-  //runApp(DevicePreview(builder: (_) => const AppModule()));
+  //runApp(const AppModule());
+  runApp(DevicePreview(builder: (_) => const AppModule()));
 }
